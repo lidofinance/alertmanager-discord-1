@@ -121,7 +121,7 @@ if (require.main === module) {
 
   for (let route of config.hooks) {
     if (!route.hook || !route.hook.startsWith || !hookRegExp.test(route.hook)) {
-      console.error('Not a valid discord web hook:', route.hook);
+      console.error('Not a valid discord web hookfor slug =', route.slug);
       process.exit(1);
     }
 
