@@ -43,7 +43,7 @@ async function handleHook(ctx) {
 
   if (!embeds.length) {
     ctx.status = 400;
-    console.warn('No data to write to embeds');
+    console.warn('Nothing to send, all alerts has been filtered out. Recieved data:', ctx.request.body.alerts);
     return;
   }
 
