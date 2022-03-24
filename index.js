@@ -72,6 +72,12 @@ async function handleHealthcheck(ctx) {
     hook = routes[key];
     break;
   }
+
+  if (hook === undefined) {
+    console.warn("No routes has been configured!")
+    ctx.status = 503;
+    return;
+  }
   
   await axios.get(hook)
     .then(() => {
@@ -111,21 +117,17 @@ if (require.main === module) {
     config = yaml.load(fs.readFileSync(configPath));
   } catch (err) {
     console.error('Failed to read configuration file:', err.message);
-    process.exit(1);
   }
 
-  if (config.hooks === undefined || !config.hooks.length) {
-    console.error('Expected "hooks" array in configuration file');
-    process.exit(1);
-  }
+  if (config !== undefined && config.hooks !== undefined && Array.isArray(config.hooks)) {
+    for (let route of config.hooks) {
+      if (!route.hook || !route.hook.startsWith || !hookRegExp.test(route.hook)) {
+        console.warn('Not a valid discord web hook for slug =', route.slug);
+        continue;
+      }
 
-  for (let route of config.hooks) {
-    if (!route.hook || !route.hook.startsWith || !hookRegExp.test(route.hook)) {
-      console.error('Not a valid discord web hook for slug =', route.slug);
-      process.exit(1);
+      routes[route.slug] = route.hook;
     }
-
-    routes[route.slug] = route.hook;
   }
 
   const app = new Koa();
