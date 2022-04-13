@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`healthcheck works 1`] = `
+Array [
+  Array [
+    "/dev/null",
+  ],
+]
+`;
+
 exports[`hook works 1`] = `
 Array [
   Array [
