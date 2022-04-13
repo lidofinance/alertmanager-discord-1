@@ -5,7 +5,7 @@ RUN yarn install --frozen-lockfile --non-interactive && yarn cache clean
 COPY --chown=node:node . .
 
 FROM node:14.19.0-alpine3.15 as base
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini=0.19.0-r0
 ENV NODE_ENV production
 COPY --from=deps /usr/src/app /usr/src/app
 WORKDIR /usr/src/app
