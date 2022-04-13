@@ -20,13 +20,12 @@ Configure alertmanager to send alerts to the related hook:
 
 ```yaml
 receivers:
-
-  - name: 'collaterals-monitoring'
+  - name: "collaterals-monitoring"
     webhook_configs:
-      - url: 'http://alertmanager-discord:5001/hook/collaterals-monitoring'
+      - url: "http://alertmanager-discord:5001/hook/collaterals-monitoring"
         send_resolved: false
 
-  - name: 'balval-alerts'
+  - name: "balval-alerts"
     webhook_configs:
-      - url: 'http://alertmanager-discord:5001/hook/balval-alerts'
+      - url: "http://alertmanager-discord:5001/hook/balval-alerts"
 ```
