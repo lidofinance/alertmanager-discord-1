@@ -1,12 +1,14 @@
----
-name: Tests
+name: Tests and Checks
 
-on:
-  workflow_dispatch:
-  push:
+on: push
 
 jobs:
+  security:
+    uses: lidofinance/linters/.github/workflows/security.yml@master
+  docker:
+    uses: lidofinance/linters/.github/workflows/docker.yml@master
   test:
+    name: App tests
     runs-on: ubuntu-latest
 
     steps:
