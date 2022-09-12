@@ -1,5 +1,4 @@
----
-name: CI staging
+name: CI Staging
 
 on:
   workflow_dispatch:
@@ -10,16 +9,15 @@ on:
       - ".github/**"
 
 jobs:
-  main:
+  deploy:
     runs-on: ubuntu-latest
     name: Build and deploy
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Staging deploying
-        run: .github/dispatch_workflow.py
+      - name: Staging deploy
+        uses: lidofinance/dispatch-workflow@v1
         env:
           APP_ID: ${{ secrets.APP_ID }}
           APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
