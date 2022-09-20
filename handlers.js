@@ -3,6 +3,19 @@ const axios = require("axios");
 const colors = { firing: 0xd50000, resolved: 0x00c853 };
 const maxEmbedsLength = 10;
 
+function getMentions(alert) {
+  const mentions = alert.labels["mentions"];
+  if (!mentions) {
+    return [];
+  }
+
+  return mentions
+    .replace(/\s/g, "")
+    .split(",")
+    .filter(Boolean)
+    .map((m) => `<@${m}>`);
+}
+
 async function handleHook(ctx) {
   ctx.status = 200;
 
@@ -24,9 +37,12 @@ async function handleHook(ctx) {
   ctx.request.body.alerts.forEach((alert) => {
     if (alert.annotations && (alert.annotations.summary || alert.annotations.description)) {
       embeds.push({
-        title: alert.annotations.summary,
-        description: alert.annotations.description,
-        color: alert.status === "resolved" ? colors.resolved : colors.firing,
+        mentions: getMentions(alert),
+        body: {
+          title: alert.annotations.summary,
+          description: alert.annotations.description,
+          color: alert.status === "resolved" ? colors.resolved : colors.firing,
+        },
       });
     }
   });
@@ -42,8 +58,19 @@ async function handleHook(ctx) {
 
   let chunk = [];
   while ((chunk = embeds.splice(0, maxEmbedsLength)) && chunk.length) {
+    const chunkMentions = [
+      ...new Set(chunk.reduce((list, embed) => list.concat(embed.mentions), [])),
+    ];
+
+    const customFields = chunkMentions.length
+      ? {
+          allowed_mentions: { parse: ["users"] },
+          content: chunkMentions.join(" "),
+        }
+      : {};
+
     await axios
-      .post(hook, { embeds: chunk })
+      .post(hook, { embeds: chunk.map((embed) => embed.body), ...customFields })
       .then(() => {
         console.log(chunk.length + " embeds sent");
       })
@@ -88,4 +115,5 @@ async function handleHealthcheck(ctx) {
 module.exports = {
   handleHook,
   handleHealthcheck,
+  getMentions,
 };

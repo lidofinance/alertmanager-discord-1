@@ -8,7 +8,93 @@ Array [
 ]
 `;
 
-exports[`hook works 1`] = `
+exports[`hook works (mentions) 1`] = `
+Array [
+  Array [
+    "/dev/null",
+    Object {
+      "allowed_mentions": Object {
+        "parse": Array [
+          "users",
+        ],
+      },
+      "content": "<@123> <@456>",
+      "embeds": Array [
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor00",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor01",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor02",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor03",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor04",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor05",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor06",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor07",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor08",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor09",
+        },
+      ],
+    },
+  ],
+  Array [
+    "/dev/null",
+    Object {
+      "allowed_mentions": Object {
+        "parse": Array [
+          "users",
+        ],
+      },
+      "content": "<@123> <@456>",
+      "embeds": Array [
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "title": "donor10",
+        },
+      ],
+    },
+  ],
+]
+`;
+
+exports[`hook works (no mentions) 1`] = `
 Array [
   Array [
     "/dev/null",
