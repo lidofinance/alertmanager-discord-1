@@ -9,6 +9,8 @@ jobs:
       languages: javascript
   docker:
     uses: lidofinance/linters/.github/workflows/docker.yml@master
+  actions:
+    uses: lidofinance/linters/.github/workflows/actions.yml@master
   test:
     name: App tests
     runs-on: ubuntu-latest
