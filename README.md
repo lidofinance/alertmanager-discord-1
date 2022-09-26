@@ -29,3 +29,16 @@ receivers:
     webhook_configs:
       - url: "http://alertmanager-discord:5001/hook/balval-alerts"
 ```
+
+## Additional features
+
+#### Discord users mentions
+
+Provide `mentions` alert's label value to mention arbitrary Discord user:
+
+```yaml
+mentions: <user_id_0>,<user_id_1>
+```
+
+User ID may be found on Discord by **Copy ID** context menu item available with
+developer mode is turned on.
