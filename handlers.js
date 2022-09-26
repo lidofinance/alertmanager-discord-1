@@ -1,7 +1,6 @@
 const axios = require("axios");
 
 const colors = { firing: 0xd50000, resolved: 0x00c853 };
-const maxEmbedsLength = 10;
 
 function getMentions(alert) {
   const mentions = alert.labels["mentions"];
@@ -32,22 +31,34 @@ async function handleHook(ctx) {
     return;
   }
 
-  const embeds = [];
+  const objectsToSend = [];
 
   ctx.request.body.alerts.forEach((alert) => {
     if (alert.annotations && (alert.annotations.summary || alert.annotations.description)) {
-      embeds.push({
-        mentions: getMentions(alert),
-        body: {
-          title: alert.annotations.summary,
-          description: alert.annotations.description,
-          color: alert.status === "resolved" ? colors.resolved : colors.firing,
-        },
-      });
+      let body = {
+        embeds: [
+          {
+            title: alert.annotations.summary,
+            description: alert.annotations.description,
+            color: alert.status === "resolved" ? colors.resolved : colors.firing,
+          },
+        ],
+      };
+
+      const mentions = getMentions(alert);
+      body = mentions.length
+        ? {
+            allowed_mentions: { parse: ["users"] },
+            content: mentions.join(" "),
+            ...body,
+          }
+        : body;
+
+      objectsToSend.push(body);
     }
   });
 
-  if (!embeds.length) {
+  if (!objectsToSend.length) {
     ctx.status = 400;
     console.warn(
       "Nothing to send, all alerts has been filtered out. Recieved data:",
@@ -56,30 +67,15 @@ async function handleHook(ctx) {
     return;
   }
 
-  let chunk = [];
-  while ((chunk = embeds.splice(0, maxEmbedsLength)) && chunk.length) {
-    const chunkMentions = [
-      ...new Set(chunk.reduce((list, embed) => list.concat(embed.mentions), [])),
-    ];
-
-    const customFields = chunkMentions.length
-      ? {
-          allowed_mentions: { parse: ["users"] },
-          content: chunkMentions.join(" "),
-        }
-      : {};
-
-    await axios
-      .post(hook, { embeds: chunk.map((embed) => embed.body), ...customFields })
-      .then(() => {
-        console.log(chunk.length + " embeds sent");
-      })
-      .catch((err) => {
-        ctx.status = 500;
-        console.error(err);
-        return;
-      });
+  for (const body of objectsToSend) {
+    await axios.post(hook, body).catch((err) => {
+      ctx.status = 500;
+      console.error(err);
+      return;
+    });
   }
+
+  console.log(`${objectsToSend.length} objects have been sent`);
 }
 
 async function handleHealthcheck(ctx) {
