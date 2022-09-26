@@ -8,13 +8,6 @@ on:
         default: ""
         required: false
         type: string
-  push:
-    branches:
-      - "!*"
-    tags:
-      - "*"
-    paths-ignore:
-      - ".github/**"
 
 jobs:
   deploy:
