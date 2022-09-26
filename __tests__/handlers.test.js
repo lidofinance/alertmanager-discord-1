@@ -32,7 +32,7 @@ test("hook works (no mentions)", async () => {
   await handleHook(ctx, () => {});
 
   expect(ctx.status).toBe(200);
-  expect(axios.post.mock.calls.length).toBe(2);
+  expect(axios.post.mock.calls.length).toBe(11);
   expect(axios.post.mock.calls).toMatchSnapshot();
 });
 
@@ -46,7 +46,7 @@ test("hook works (mentions)", async () => {
       body: {
         alerts: Array.from({ length: 11 }, (_, i) => {
           const body = getAlert(i);
-          body.labels.mentions = "123,456";
+          body.labels.mentions = `user${i},42,`;
           return body;
         }),
       },
@@ -58,7 +58,7 @@ test("hook works (mentions)", async () => {
   await handleHook(ctx, () => {});
 
   expect(ctx.status).toBe(200);
-  expect(axios.post.mock.calls.length).toBe(2);
+  expect(axios.post.mock.calls.length).toBe(11);
   expect(axios.post.mock.calls).toMatchSnapshot();
 });
 
