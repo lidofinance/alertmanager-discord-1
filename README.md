@@ -45,26 +45,20 @@ developer mode is turned on.
 
 #### Title and description templating
 
-Provide `TITLE_TMPL` and `DESCR_TMPL` to compile title and/or description, e.g. in docker-compose:
+Provide `TITLE_TMPL` and `DESCR_TMPL` to override title and/or description, e.g. in docker-compose:
 
 ```yaml
 environment:
   TITLE_TMPL: >
-    {{@if(it.status==='resolved' && it.annotations.onResolv)}}
-    {{it.annotations.onResolv}}
-    {{#else}}
-    {{it.annotations.summary}}
+    {{@if(it.status==='resolved'}}
+    {{it.annotations.onResolved|d('')}}
     {{/if}}
 ```
 
+If template is evaluating to an empty string, `annotations.summary` and `annotations.description` fields
+will be used for title and description respectivelly.
+
 Look at [squirrelly](https://squirrelly.js.org) docs for templating reference.
-
-Default values:
-
-```
-TITLE_TMPL: {{it.annotations.summary}}
-DESCR_TMPL: {{it.annotations.description}}
-```
 
 ## Release flow
 

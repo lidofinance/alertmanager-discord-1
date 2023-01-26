@@ -219,7 +219,7 @@ Array [
       "embeds": Array [
         Object {
           "color": 51283,
-          "description": "",
+          "description": undefined,
           "title": "here was no description",
         },
       ],
@@ -232,7 +232,7 @@ Array [
         Object {
           "color": 51283,
           "description": "here was no summary",
-          "title": "",
+          "title": undefined,
         },
       ],
     },

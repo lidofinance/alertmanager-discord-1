@@ -36,13 +36,15 @@ async function handleHook(ctx) {
 
   ctx.request.body.alerts.forEach((alert) => {
     try {
-      if (!alert.annotations?.summary && !alert.annotations?.description) return;
+      const description = alert.annotations?.description;
+      const summary = alert.annotations?.summary;
+      if (!summary && !description) return;
 
       let body = {
         embeds: [
           {
-            title: compileTitle(alert),
-            description: compileDescr(alert),
+            title: compileTitle(alert) || summary,
+            description: compileDescr(alert) || description,
             color: colors[alert.status],
           },
         ],
