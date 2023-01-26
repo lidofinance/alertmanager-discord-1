@@ -8,7 +8,7 @@ const { router } = require("./router");
 
 const port = process.env.PORT || 5001;
 const configPath = "/etc/alertmanager-discord.yml";
-const hookRegExp = new RegExp("https://discord(?:app)?.com/api/webhooks/[0-9]{18}/[a-zA-Z0-9_-]+");
+const hookRegExp = new RegExp("https://discord(?:app)?.com/api/webhooks/[0-9]+/[a-zA-Z0-9_-]+");
 
 if (require.main === module) {
   let config,
