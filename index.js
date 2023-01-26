@@ -11,7 +11,8 @@ const configPath = "/etc/alertmanager-discord.yml";
 const hookRegExp = new RegExp("https://discord(?:app)?.com/api/webhooks/[0-9]+/[a-zA-Z0-9_-]+");
 
 if (require.main === module) {
-  let config, routes = {};
+  let config,
+    routes = {};
 
   try {
     config = yaml.load(fs.readFileSync(configPath));

@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { compileTitle, compileDescr } = require("./templating");
 
 const colors = { firing: 0xd50000, resolved: 0x00c853 };
 
@@ -34,27 +35,30 @@ async function handleHook(ctx) {
   const objectsToSend = [];
 
   ctx.request.body.alerts.forEach((alert) => {
-    if (alert.annotations && (alert.annotations.summary || alert.annotations.description)) {
+    try {
+      const description = alert.annotations?.description;
+      const summary = alert.annotations?.summary;
+      if (!summary && !description) return;
+
       let body = {
         embeds: [
           {
-            title: alert.annotations.summary,
-            description: alert.annotations.description,
-            color: alert.status === "resolved" ? colors.resolved : colors.firing,
+            title: compileTitle(alert) || summary,
+            description: compileDescr(alert) || description,
+            color: colors[alert.status],
           },
         ],
       };
 
       const mentions = getMentions(alert);
-      body = mentions.length
-        ? {
-            allowed_mentions: { parse: ["users"] },
-            content: mentions.join(" "),
-            ...body,
-          }
-        : body;
+      if (mentions.length) {
+        body.allowed_mentions = { parse: ["users"] };
+        body.content = mentions.join(" ");
+      }
 
       objectsToSend.push(body);
+    } catch (err) {
+      console.error(err);
     }
   });
 

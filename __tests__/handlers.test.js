@@ -36,6 +36,44 @@ test("hook works (no mentions)", async () => {
   expect(axios.post.mock.calls).toMatchSnapshot();
 });
 
+test("hook works (missing annotations subfield)", async () => {
+  // mock
+  const ctx = {
+    routes: { test: "/dev/null" },
+    params: { slug: "test" },
+
+    request: {
+      body: {
+          alerts: [
+              {
+                status: "resolved",
+                labels: { alertname: "activate" },
+                annotations: {
+                  summary: "here was no description"
+                },
+              },
+              {
+                status: "resolved",
+                labels: { alertname: "activate" },
+                annotations: {
+                  description: "here was no summary"
+                },
+              },
+          ],
+      },
+    },
+  };
+
+  axios.post.mockResolvedValue(null);
+
+  await handleHook(ctx, () => {});
+
+  expect(ctx.status).toBe(200);
+  expect(axios.post.mock.calls.length).toBe(2);
+  expect(axios.post.mock.calls).toMatchSnapshot();
+});
+
+
 test("hook works (mentions)", async () => {
   // mock
   const ctx = {
