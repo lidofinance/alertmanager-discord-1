@@ -8,11 +8,11 @@ const titleTmpl = process.env.TITLE_TMPL || "";
 const descrTmpl = process.env.DESCR_TMPL || "";
 
 const compileTitle = (alert) => {
-  return sqrl.render(titleTmpl, alert);
+  return sqrl.render(titleTmpl, alert).trim();
 };
 
 const compileDescr = (alert) => {
-  return sqrl.render(descrTmpl, alert);
+  return sqrl.render(descrTmpl, alert).trim();
 };
 
 module.exports = {
