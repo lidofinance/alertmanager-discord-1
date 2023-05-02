@@ -1,3 +1,17 @@
+# [2.4.0](https://github.com/lidofinance/alertmanager-discord/compare/2.3.0...2.4.0) (2023-05-02)
+
+
+### Bug Fixes
+
+* trim evaluated string ([7643823](https://github.com/lidofinance/alertmanager-discord/commit/7643823bba56eeeccd87f7d1ec74265c90440979))
+
+
+### Features
+
+* extend `allowed_mentions` ([#25](https://github.com/lidofinance/alertmanager-discord/issues/25)) ([d09249f](https://github.com/lidofinance/alertmanager-discord/commit/d09249f60185a603ce547072d1d1acedaece2c55))
+
+
+
 # [2.3.0](https://github.com/lidofinance/alertmanager-discord/compare/2.2.0...2.3.0) (2023-01-26)
 
 
