@@ -16,6 +16,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user0> <@42>",
@@ -34,6 +35,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user1> <@42>",
@@ -52,6 +54,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user2> <@42>",
@@ -70,6 +73,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user3> <@42>",
@@ -88,6 +92,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user4> <@42>",
@@ -106,6 +111,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user5> <@42>",
@@ -124,6 +130,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user6> <@42>",
@@ -142,6 +149,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user7> <@42>",
@@ -160,6 +168,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user8> <@42>",
@@ -178,6 +187,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user9> <@42>",
@@ -196,6 +206,7 @@ Array [
       "allowed_mentions": Object {
         "parse": Array [
           "users",
+          "roles",
         ],
       },
       "content": "<@user10> <@42>",

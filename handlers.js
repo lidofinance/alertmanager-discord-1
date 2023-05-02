@@ -52,7 +52,7 @@ async function handleHook(ctx) {
 
       const mentions = getMentions(alert);
       if (mentions.length) {
-        body.allowed_mentions = { parse: ["users"] };
+        body.allowed_mentions = { parse: ["users", "roles"] };
         body.content = mentions.join(" ");
       }
 
