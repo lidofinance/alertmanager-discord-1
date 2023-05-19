@@ -19,6 +19,7 @@ test("hook works (no mentions)", async () => {
   const ctx = {
     routes: { test: "/dev/null" },
     params: { slug: "test" },
+    query: { q: "42" },
 
     request: {
       body: {
@@ -41,6 +42,7 @@ test("hook works (missing annotations subfield)", async () => {
   const ctx = {
     routes: { test: "/dev/null" },
     params: { slug: "test" },
+    query: {},
 
     request: {
       body: {
@@ -79,6 +81,7 @@ test("hook works (mentions)", async () => {
   const ctx = {
     routes: { test: "/dev/null" },
     params: { slug: "test" },
+    query: {},
 
     request: {
       body: {
@@ -105,6 +108,7 @@ test("healthcheck works", async () => {
   const ctx = {
     routes: { test: "/dev/null" },
     params: { slug: "test" },
+    query: {},
   };
 
   axios.get.mockResolvedValue(null);
