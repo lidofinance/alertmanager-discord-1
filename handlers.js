@@ -72,7 +72,7 @@ async function handleHook(ctx) {
   }
 
   for (const body of objectsToSend) {
-    await axios.post(hook, body).catch((err) => {
+    await axios.post(hook, body, { params: ctx.query }).catch((err) => {
       ctx.status = 500;
       console.error(err);
       return;
