@@ -1,3 +1,12 @@
+# [2.5.0](https://github.com/lidofinance/alertmanager-discord/compare/2.4.0...2.5.0) (2023-05-19)
+
+
+### Features
+
+* support query params passthrough ([e72db23](https://github.com/lidofinance/alertmanager-discord/commit/e72db23eb0a733e6c9cd32f6918d541ffab62df9))
+
+
+
 # [2.4.0](https://github.com/lidofinance/alertmanager-discord/compare/2.3.0...2.4.0) (2023-05-02)
 
 
