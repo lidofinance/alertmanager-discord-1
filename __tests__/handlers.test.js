@@ -1,7 +1,7 @@
 const axios = require("axios");
 jest.mock("axios");
 
-const { handleHook, handleHealthcheck, getMentions } = require("../handlers");
+const { handleHook, handleHealthcheck, getMentions, getFields } = require("../handlers");
 
 function getAlert(i) {
   return {
@@ -103,6 +103,38 @@ test("hook works (mentions)", async () => {
   expect(axios.post.mock.calls).toMatchSnapshot();
 });
 
+test("hook works (fields)", async () => {
+  // mock
+  const ctx = {
+    routes: { test: "/dev/null" },
+    params: { slug: "test" },
+    query: {},
+
+    request: {
+      body: {
+        alerts: [
+          {
+            status: "resolved",
+            labels: { alertname: "activate" },
+            annotations: {
+              summary: "Obi-Wan Kenobi says",
+              inline_fields: ["- **hello**", "- there"].join("\n\n"),
+            },
+          },
+        ],
+      },
+    },
+  };
+
+  axios.post.mockResolvedValue(null);
+
+  await handleHook(ctx, () => { });
+
+  expect(ctx.status).toBe(200);
+  expect(axios.post.mock.calls).toMatchSnapshot();
+});
+
+
 test("healthcheck works", async () => {
   // mock
   const ctx = {
@@ -137,3 +169,41 @@ test("getMentions works (valid label's value)", () => {
 
   expect(mentions).toStrictEqual(["<@123>", "<@456>"]);
 });
+
+test("getFields works (no inline_fields)", () => {
+  const fields = getFields({
+    annotations: {},
+  });
+
+  expect(fields.length).toBe(0);
+});
+
+test("getFields works (not a list)", () => {
+  const fields = getFields({
+    annotations: {
+      inline_fields: "**hm**",
+    },
+  });
+
+  expect(fields.length).toBe(0);
+})
+
+test("getFields works (valid list)", () => {
+  const fields = getFields({
+    annotations: {
+      inline_fields: "- **hm**",
+    },
+  });
+
+  expect(fields.length).toBe(1);
+})
+
+test("getFields works (nested list)", () => {
+  const fields = getFields({
+    annotations: {
+      inline_fields: "- **hm**\n\t+ **hmmm**",
+    },
+  });
+
+  expect(fields.length).toBe(1);
+})
