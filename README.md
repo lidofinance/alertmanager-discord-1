@@ -60,6 +60,16 @@ will be used for title and description respectivelly.
 
 Look at [squirrelly](https://squirrelly.js.org) docs for templating reference.
 
+#### Inline fields
+
+Provide `inline_fields` alert's annotation to insert the inline fields with the values provided by the markdown list:
+
+```yaml
+inline_fields: |
+  - hello
+  - there
+```
+
 ## Release flow
 
 To create new release:
