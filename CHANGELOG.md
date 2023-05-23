@@ -1,3 +1,12 @@
+# [2.6.0](https://github.com/lidofinance/alertmanager-discord/compare/2.5.0...2.6.0) (2023-05-23)
+
+
+### Features
+
+* inline fields support ([0bd8c90](https://github.com/lidofinance/alertmanager-discord/commit/0bd8c90f10dd60a6989ca5ba7d8302ddb4dd7966))
+
+
+
 # [2.5.0](https://github.com/lidofinance/alertmanager-discord/compare/2.4.0...2.5.0) (2023-05-19)
 
 
@@ -68,10 +77,6 @@
 
 
 # [2.0.0](https://github.com/lidofinance/alertmanager-discord/compare/1.1.0...2.0.0) (2022-03-17)
-
-
-
-# 1.1.0 (2022-03-11)
 
 
 
