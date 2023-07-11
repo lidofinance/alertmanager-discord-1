@@ -1,0 +1,439 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`balval features is correct 1`] = `
+Array [
+  Array [
+    "/dev/null",
+    Object {
+      "embeds": Array [
+        Object {
+          "color": 51283,
+          "description": "common resolved description",
+          "fields": Array [
+            Object {
+              "inline": true,
+              "name": "name00",
+              "value": "value00",
+            },
+            Object {
+              "inline": true,
+              "name": "name02",
+              "value": "value02",
+            },
+            Object {
+              "inline": true,
+              "name": "name04",
+              "value": "value04",
+            },
+            Object {
+              "inline": true,
+              "name": "name06",
+              "value": "value06",
+            },
+            Object {
+              "inline": true,
+              "name": "name08",
+              "value": "value08",
+            },
+            Object {
+              "inline": true,
+              "name": "name10",
+              "value": "value10",
+            },
+            Object {
+              "inline": true,
+              "name": "name12",
+              "value": "value12",
+            },
+            Object {
+              "inline": true,
+              "name": "name14",
+              "value": "value14",
+            },
+            Object {
+              "inline": true,
+              "name": "name16",
+              "value": "value16",
+            },
+            Object {
+              "inline": true,
+              "name": "name18",
+              "value": "value18",
+            },
+            Object {
+              "inline": true,
+              "name": "name20",
+              "value": "value20",
+            },
+            Object {
+              "inline": true,
+              "name": "name22",
+              "value": "value22",
+            },
+            Object {
+              "inline": true,
+              "name": "name24",
+              "value": "value24",
+            },
+          ],
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "13 common resolved summary with count",
+          "url": "",
+        },
+        Object {
+          "color": 13959168,
+          "description": "common description",
+          "fields": Array [
+            Object {
+              "inline": true,
+              "name": "name01",
+              "value": "value01",
+            },
+            Object {
+              "inline": true,
+              "name": "name03",
+              "value": "value03",
+            },
+            Object {
+              "inline": true,
+              "name": "name05",
+              "value": "value05",
+            },
+            Object {
+              "inline": true,
+              "name": "name07",
+              "value": "value07",
+            },
+            Object {
+              "inline": true,
+              "name": "name09",
+              "value": "value09",
+            },
+            Object {
+              "inline": true,
+              "name": "name11",
+              "value": "value11",
+            },
+            Object {
+              "inline": true,
+              "name": "name13",
+              "value": "value13",
+            },
+            Object {
+              "inline": true,
+              "name": "name15",
+              "value": "value15",
+            },
+            Object {
+              "inline": true,
+              "name": "name17",
+              "value": "value17",
+            },
+            Object {
+              "inline": true,
+              "name": "name19",
+              "value": "value19",
+            },
+            Object {
+              "inline": true,
+              "name": "name21",
+              "value": "value21",
+            },
+            Object {
+              "inline": true,
+              "name": "name23",
+              "value": "value23",
+            },
+            Object {
+              "inline": true,
+              "name": "name25",
+              "value": "value25",
+            },
+          ],
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "13 common summary with count",
+          "url": "https://ya-fired.ru",
+        },
+      ],
+    },
+  ],
+]
+`;
+
+exports[`hook works 1`] = `
+Array [
+  Array [
+    "/dev/null",
+    Object {
+      "embeds": Array [
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor10",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor09",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor08",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor07",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor06",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor05",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor04",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor03",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor02",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor01",
+          "url": "",
+        },
+      ],
+    },
+  ],
+  Array [
+    "/dev/null",
+    Object {
+      "embeds": Array [
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor00",
+          "url": "",
+        },
+      ],
+    },
+  ],
+]
+`;
+
+exports[`mention works 1`] = `
+Array [
+  Array [
+    "/dev/null",
+    Object {
+      "allowed_mentions": Object {
+        "parse": Array [
+          "users",
+          "roles",
+        ],
+      },
+      "content": "<@mention-10> <@another-mention-10> <@mention-8> <@another-mention-8> <@mention-6> <@another-mention-6> <@mention-4> <@another-mention-4> <@mention-2> <@another-mention-2>",
+      "embeds": Array [
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor10",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor09",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor08",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor07",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor06",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor05",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor04",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor03",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor02",
+          "url": "",
+        },
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor01",
+          "url": "",
+        },
+      ],
+    },
+  ],
+  Array [
+    "/dev/null",
+    Object {
+      "allowed_mentions": Object {
+        "parse": Array [
+          "users",
+          "roles",
+        ],
+      },
+      "content": "<@mention-0> <@another-mention-0>",
+      "embeds": Array [
+        Object {
+          "color": 51283,
+          "description": "cinema",
+          "footer": Object {
+            "icon_url": "",
+            "text": "",
+          },
+          "title": "donor00",
+          "url": "",
+        },
+      ],
+    },
+  ],
+]
+`;
