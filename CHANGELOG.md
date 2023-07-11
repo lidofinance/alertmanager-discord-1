@@ -1,3 +1,12 @@
+# [2.7.0](https://github.com/lidofinance/alertmanager-discord/compare/2.6.0...2.7.0) (2023-07-11)
+
+
+### Features
+
+* alternative working mode ([e4d2172](https://github.com/lidofinance/alertmanager-discord/commit/e4d2172f4afe60d4f4d2c7a8b5f0f480641cb05a))
+
+
+
 # [2.6.0](https://github.com/lidofinance/alertmanager-discord/compare/2.5.0...2.6.0) (2023-05-23)
 
 
@@ -73,10 +82,6 @@
 
 
 # [2.1.0](https://github.com/lidofinance/alertmanager-discord/compare/2.0.0...2.1.0) (2022-04-12)
-
-
-
-# [2.0.0](https://github.com/lidofinance/alertmanager-discord/compare/1.1.0...2.0.0) (2022-03-17)
 
 
 
