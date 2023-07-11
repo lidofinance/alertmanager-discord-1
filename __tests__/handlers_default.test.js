@@ -1,7 +1,7 @@
 const axios = require("axios");
 jest.mock("axios");
 
-const { handleHook, handleHealthcheck, getMentions, getFields } = require("../handlers");
+const { handleHook, handleHealthcheck, getMentions, getFields } = require("../handlers_default");
 
 function getAlert(i) {
   return {

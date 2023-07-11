@@ -1,7 +1,8 @@
 const Router = require("@koa/router");
 const bodyParser = require("koa-bodyparser");
 
-const { handleHook, handleHealthcheck } = require("./handlers");
+const { handleHook, handleHealthcheck } = require("./handlers_default");
+const { handleHook: handleHookAlt } = require("./handlers_alternative");
 
 const router = new Router();
 
@@ -18,7 +19,7 @@ router
         ctx.throw(400);
       },
     }),
-    handleHook
+    process.env.WORKING_MODE === 'alternative' ? handleHookAlt : handleHook
   )
   .get("/health", handleHealthcheck);
 
