@@ -116,15 +116,13 @@ async function handleHook(ctx) {
                     ctx.status = 500;
 
                     const errorConfig = err.config || {};
-                    ctx.logger.error(`Axios error in "handlers_alternative.js": ${err.message}`);
+                    const errorMessage = err.message
+                      + (errorConfig.method != null ? `; Method: ${errorConfig.method}` : '')
+                      + (errorConfig.data != null ? `; Request data length: ${
+                        errorConfig.data.length
+                      }; Request data: ${JSON.stringify(errorConfig.data)}` : '');
 
-                    if (errorConfig.method != null) {
-                        ctx.logger.error(`Method: ${errorConfig.method}`);
-                    }
-                    if (errorConfig.data != null) {
-                        ctx.logger.error(`Request data: ${JSON.stringify(errorConfig.data)}`);
-                        ctx.logger.error(`Request data length: ${errorConfig.data.length}`);
-                    }
+                    ctx.logger.error(`Axios error in "handlers_alternative.js": ${errorMessage}`);
                 });
         }
     } else {

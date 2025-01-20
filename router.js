@@ -15,10 +15,13 @@ router
         json: ["*/*"],
       },
       onerror: (err, ctx) => {
-        ctx.logger.warn(err.stack);
-        ctx.logger.warn(`Body: ${JSON.stringify(err.body)}`);
-        ctx.logger.warn(`Body length: ${err.body != null ? err.body.length : 0}`)
-        ctx.logger.warn(`Status: ${err.status}`);
+        ctx.logger.warn(`Status: ${
+          err.status
+        }; Body length: ${
+          err.body != null ? err.body.length : 0
+        }; Body: ${
+          JSON.stringify(err.body)
+        }; Error stack: ${err.stack}`);
         ctx.throw(400);
       },
     }),
