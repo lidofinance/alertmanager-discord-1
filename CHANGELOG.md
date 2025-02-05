@@ -1,3 +1,18 @@
+# [2.8.0](https://github.com/lidofinance/alertmanager-discord/compare/2.7.0...2.8.0) (2025-02-05)
+
+
+### Bug Fixes
+
+* test snapshot ([f7c2d06](https://github.com/lidofinance/alertmanager-discord/commit/f7c2d06f280dd408b9629256a7f42904d586117c))
+* tests ([0bb160b](https://github.com/lidofinance/alertmanager-discord/commit/0bb160bdfb922d002aa4ee3f2801cda9f396528a))
+
+
+### Features
+
+* clean secrets in logs ([af8411e](https://github.com/lidofinance/alertmanager-discord/commit/af8411ea7acb50131f21195f0fbc7561cbcf4b67))
+
+
+
 # [2.7.0](https://github.com/lidofinance/alertmanager-discord/compare/2.6.0...2.7.0) (2023-07-11)
 
 
@@ -78,10 +93,6 @@
 
 
 ## [2.1.1](https://github.com/lidofinance/alertmanager-discord/compare/2.1.0...2.1.1) (2022-04-13)
-
-
-
-# [2.1.0](https://github.com/lidofinance/alertmanager-discord/compare/2.0.0...2.1.0) (2022-04-12)
 
 
 
